@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedra, papel ou tesoura</title>
+</head>
+<body>
+    <link rel="stylesheet" href="styles.css">
+<h2 id="h2">Pedra, papel ou tesoura</h2>
+<select id="escolha">
+<option>Pedra</option>
+<option>Papel</option>
+<option>Tesoura</option>
+</select>
+<button onclick="jogar()" id=".button">Jogar</button>
+<div id="imagens">
+<img src="../../../Submitted%20files/JORGE%20MIGUEL%20MESQUITA%20FLOR/Jogo%20Pedra-Papel-Tesoura,%20Contador%20Regressivo/pedra.png" width="200" alt="Pedra"> 
+<img src="../../../Submitted%20files/JORGE%20MIGUEL%20MESQUITA%20FLOR/Jogo%20Pedra-Papel-Tesoura,%20Contador%20Regressivo/papel.png" width="200" alt="Papel"> 
+<img src="../../../Submitted%20files/JORGE%20MIGUEL%20MESQUITA%20FLOR/Jogo%20Pedra-Papel-Tesoura,%20Contador%20Regressivo/tesouro.png" width="200" alt="Tesoura">
+</div>
+<p>Pontuação: <span id="pontuacao">0</span></p>
+<h4></h4>
+<p id="resultado"></p>
+<script>
+        let pontos = 0;
+
+ 
+
+        function jogar() {
+            const opcoes = ['Pedra', 'Papel', 'Tesoura'];
+            const escolhaJogador = document.getElementById("escolha").selectedIndex;
+            const escolhaComputador = numeroAleatorio(0, 2);
+
+ 
+
+            if ((escolhaComputador === 0 && escolhaJogador === 2) ||
+                (escolhaComputador === 1 && escolhaJogador === 0) ||
+                (escolhaComputador === 2 && escolhaJogador === 1)) {
+                resultado("Você perdeu!", escolhaComputador);
+            } else if (escolhaComputador === escolhaJogador) {
+                resultado("Empatou!", escolhaComputador);
+            } else {
+                resultado("Você venceu!", escolhaComputador);
+                pontos++;
+                document.getElementById("pontuacao").textContent = pontos;
+            }
+        }
+
+ 
+
+        function resultado(mensagem, escolhaComputador) {
+            const opcoes = ['Pedra', 'Papel', 'Tesoura'];
+            document.querySelector("h4").innerText = mensagem;
+            document.getElementById("resultado").innerText = 'O computador escolheu ' + opcoes[escolhaComputador];
+        }
+
+ 
+
+        function numeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+</script>
+</body>
+</html>

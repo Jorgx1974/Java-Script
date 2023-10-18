@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FAQ</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+        }
+        .layout{
+            width: 600px;
+            margin: auto;
+        }
+        .accordion{
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: rgb(140, 135, 135);
+            border-radius: 30px;
+        }
+        .accordion__question p{
+            margin: 5px;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        .accordion__answer p{
+            margin: 5px;
+            padding: 10px;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            border-radius: 20px; 
+        }
+        .accordion:hover{
+            cursor: pointer;
+        }
+        .accordion__answer {
+            display: none;
+        } 
+        .accordion.active .accordion__answer {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color:rgb(255, 255, 255); text-align:center">FAQ dos burros :O</h2>
+    <div class="layout">
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>O que aconteceu no dia 11/9?</p>
+            </div>
+            <div class="accordion__answer">
+                <p>O que foi o 11 de setembro de 2001? Em 11 de setembro de 2001, os EUA sofreu uma sequência de ataques terroristas. Ao todo, 19 terroristas
+                     fizeram o sequestro de quatro aviões comerciais, sendo eles: Voo American Airlines 11, Voo United Airlines 175, 
+                     Voo American Airlines 77 e o Voo United Airlines 93.</p>
+            </div>
+        </div>
+        
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>Como sonegar imposto?</p>
+            </div>
+            <div class="accordion__answer">
+                <p>
+                    Criar documentos falsos;
+                    <br>
+                    Usar dados pessoais falsos;
+                    <br>
+                    Alterar documentos legítimos;
+                    <br>
+                    Omitir informações na declaração de IR;
+                    <br>
+                    Declarar despesas pessoais como despesas corporativas;
+                    <br>
+                    Não declarar renda;
+                    <br>
+                    Falha ao declarar renda;
+                    <br>
+                    Ocorrência de erro no pagamento.
+                    <br>
+                </p>
+            </div>
+    </div>
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>Se eu comprar caminhão pela internet, ele vem dentro de um caminhão?</p>
+  
+            </div>
+            <div class="accordion__answer">
+                <p>Mesmo fazendo uma compra pela internet, você provavelmente vai ter que buscar o caminhão na concessionária ou com o dono
+                     do caminhão usado. Mas os caminhões são transportados, sim, por caminhões. Segundo esta matéria, os "cavalinhos", 
+                     os caminhões sem a carroceria, são transportados por outros caminhões com a ajuda de um engate do tipo prancha.
+                </p>
+            </div>
+            </div>
+
+            <div class="layout">
+                <div class="accordion">
+                    <div class="accordion__question">
+                        <p>Vape da câncer?</p>
+                    </div>
+                    <div class="accordion__answer">
+                        <p>Os produtos utilizados para gerar o vapor dos cigarros, incluem quantidades de nicotina e substâncias citotóxicas,
+                         que além de gerar dependência, alteram o DNA das células da boca e de todo trato respiratório, aumentando o risco
+                         da ocorrência de tumores, alertam especialistas.
+                        <br>
+                        Também conhecido como câncer oral ou carcinoma de células escamosas, o câncer de boca afeta os tecidos da cavidade
+                        oral e áreas adjacentes, como os lábios, língua, gengivas, bochechas e céu da boca.</p>
+          
+                    </div>
+                </div>
+           
+  
+    <script>
+        let answers=document.querySelectorAll(".accordion");
+        answers.forEach((event)=>{
+            event.addEventListener('click',()=>{
+                if(event.classList.contains("active")){
+                    event.classList.remove("active");
+                }
+                else{
+                    event.classList.add("active");
+                }
+            })
+        })
+    </script>
+</body>
+</html>
